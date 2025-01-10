@@ -12,7 +12,7 @@ const prisma = new PrismaClient();
  *   name: string
  * }
  */
-export async function createUser(username: string, password: string, name: string) {
+export async function createUser(username: string, password: string, name: string): Promise<void> {
     await prisma.userTable.create({
         data:{
             username:username,
@@ -20,7 +20,7 @@ export async function createUser(username: string, password: string, name: strin
             name : name 
         }
     })
-    console.log("Created useR SUCESSFULY")
+    console.log("Created User SUCESSFULY")
 }
 
 /*
